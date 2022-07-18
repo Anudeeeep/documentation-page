@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Documentation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-body">
+      <nav id="navbar">
+        <header>OOP in Python</header>
+        <ul>
+          <a class="nav-link" href="#Introduction_to_OOP">Introduction to OOP</a>
+          <a class="nav-link" href="#Class">Class</a>
+          <a class="nav-link" href="#Object">Object</a>
+          <a class="nav-link" href="#Polymorphism">Polymorphism</a>
+          <a class="nav-link" href="#Encapsulation">Encapsulation</a>
+          <a class="nav-link" href="#Inheritance">Inheritance</a>
+          <a class="nav-link" href="#Abstraction">Abstraction</a>
+          <a class="nav-link" href="#Reference">Reference</a>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        <section class="main-section" id="Introduction_to_OOP">
+          <header>Introduction to OOP</header>
+          <p>
+            In Python, object-oriented Programming (OOPs) is a programming
+            paradigm that uses objects and classes in programming. It aims to
+            implement real-world entities like inheritance, polymorphisms,
+            encapsulation, etc. in the programming. The main concept of OOPs is
+            to bind the data and the functions that work on that together as a
+            single unit so that no other part of the code can access this data.
+          </p>
+          <p>Main Concepts of Object-Oriented Programming (OOPs)</p>
+          <ul>
+            <li>Class</li>
+            <li>Objects</li>
+            <li>Polymorphism</li>
+            <li>Encapsulation</li>
+            <li>Inheritance</li>
+            <li>Data Abstraction</li>
+          </ul>
+        </section>
+        <section class="main-section" id="Class">
+          <header>Class</header>
+          <p>
+            A class is a collection of objects. A class contains the blueprints
+            or the prototype from which the objects are being created. It is a
+            logical entity that contains some attributes and methods.
+            <br /><br />
+            To understand the need for creating a class let’s consider an
+            example, let’s say you wanted to track the number of dogs that may
+            have different attributes like breed, age. If a list is used, the
+            first element could be the dog’s breed while the second element
+            could represent its age. Let’s suppose there are 100 different dogs,
+            then how would you know which element is supposed to be which? What
+            if you wanted to add other properties to these dogs? This lacks
+            organization and it’s the exact need for classes.
+            <ul>
+                <li>Classes are created by keyword class.</li>
+                <li>Attributes are the variables that belong to a class.</li>
+                <li>Attributes are always public and can be accessed using the dot (.) operator. Eg.: Myclass.Myattribute</li>
+            </ul>
+            <code>class ClassName:
+                <br># Statement-1
+                <br>.
+                <br>.
+                <br>.
+                <br> # Statement-N</code>
+          </p>
+        </section>
+
+        <section class="main-section" id="Object">
+            <header>Object</header>
+            <p>
+                The object is an entity that has a state and behavior associated with it. It may be any real-world object like a mouse, keyboard, chair, table, pen, etc. Integers, strings, floating-point numbers, even arrays, and dictionaries, are all objects. More specifically, any single integer or any single string is an object.
+              <br>An object consists of :
+                <ul>
+                  <li><b>State:</b> It is represented by the attributes of an object. It also reflects the properties of an object</li>
+                  <li><b>Behavior:</b> It is represented by the methods of an object. It also reflects the response of an object to other objects.</li>
+                  <li><b>Identity:</b> It gives a unique name to an object and enables one object to interact with other objects.</li>
+              </ul>
+            </p>
+          </section>
+
+          <section class="main-section" id="Polymorphism">
+            <header>Polymorphism</header>
+            <p>
+                Polymorphism simply means having many forms. For example, we need to determine if the given species of birds fly or not, using polymorphism we can do this using a single function.
+                <br><br>
+                <code>
+                class Bird:
+   
+                <br>def intro(self):
+                <br>print("There are many types of birds.")
+ 
+                <br><br>def flight(self):
+                <br>print("Most of the birds can fly but some cannot.")
+ 
+                <br><br>class sparrow(Bird):
+   
+                <br><br>def flight(self):
+                <br>print("Sparrows can fly.")
+ 
+                <br><br>class ostrich(Bird):
+ 
+                <br><br>def flight(self):
+                <br>print("Ostriches cannot fly.")
+ 
+                <br><br>obj_bird = Bird()
+                <br>obj_spr = sparrow()
+                <br>obj_ost = ostrich()
+ 
+                <br><br>obj_bird.intro()
+                <br>obj_bird.flight()
+ 
+                <br><br>obj_spr.intro()
+                <br>obj_spr.flight()
+ 
+                <br><br>obj_ost.intro()
+                <br>obj_ost.flight()
+              </code>
+            </p>
+          </section>
+
+          <section class="main-section" id="Encapsulation">
+            <header>Encapsulation</header>
+            <p>
+                Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It describes the idea of wrapping data and the methods that work on data within one unit. This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data. To prevent accidental change, an object’s variable can only be changed by an object’s method. Those types of variables are known as private variables.
+                <br><br><code>
+                    class Base:
+                    <br>def __init__(self):
+                    <br>self.a = "GeeksforGeeks"
+                    <br>self.__c = "GeeksforGeeks"
+ 
+                    <br><br># Creating a derived class
+                    <br>class Derived(Base):
+                    <br>def __init__(self):
+ 
+                    <br><br># Calling constructor of
+                    <br># Base class
+                    <br>Base.__init__(self)
+                    <br>print("Calling private member of base class: ")
+                    <br>print(self.__c)
+ 
+ 
+                    <br><br><br># Driver code
+                    <br>obj1 = Base()
+                    <br>print(obj1.a)
+                </code>
+            </p>
+          </section>
+
+          <section class="main-section" id="Inheritance">
+            <header>Inheritance</header>
+            <p>
+                Inheritance is the capability of one class to derive or inherit the properties from another class. The class that derives properties is called the derived class or child class and the class from which the properties are being derived is called the base class or parent class. 
+              <ul>
+                <li><b>Single Inheritance:</b>Single-level inheritance enables a derived class to inherit characteristics from a single-parent class.</li>
+                <li><b>Multilevel Inheritance:</b>Multi-level inheritance enables a derived class to inherit properties from an immediate parent class which in turn inherits properties from his parent class.</li>
+                <li><b>Hierarchical Inheritance:</b> Hierarchical level inheritance enables more than one derived class to inherit properties from a parent class.</li>
+              </ul>
+              <code>Class BaseClass:
+                <br> {Body}
+                <br> Class DerivedClass(BaseClass):
+                <br>{Body}</code>
+                <br>
+          </section>
+          
+          <section class="main-section" id="Abstraction">
+            <header>Abstraction</header>
+            <p>It hides the unnecessary code details from the user. Also,  when we do not want to give out sensitive parts of our code implementation and this is where data abstraction came.Data Abstraction in Python can be achieved through creating abstract classes.</p>
+            <code>
+                <br>from abc import ABC  
+                <br>class ClassName(ABC):  
+            </code>
+            <br>
+          </section>
+
+          <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <p>All the documentation in this page is taken from <a href="https://www.geeksforgeeks.org/python-oops-concepts/#:~:text=In%20Python%2C%20object%2Doriented%20Programming,in%20the%20programming." target="_blank">GeeksforGeeks</a></p>
+          </section>
+      </main>
+    </div>
+  </body>
+</html>
