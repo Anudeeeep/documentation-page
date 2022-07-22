@@ -7,7 +7,7 @@
 
 ## Demo
 
-https://documentation-freecodedamp.netlify.app/
+https://documentation-freecodecamp.netlify.app/
   
 ## Tech Stack
 
